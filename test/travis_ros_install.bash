@@ -14,7 +14,7 @@ bash ./step0.bash
 bash ./step1.bash
 
 #catkin setup
-mkdire -p ~/catkin_ws/src
+mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/src
 source /opt/ros/indigo/setup.bash
 cd ~/catkin_ws
