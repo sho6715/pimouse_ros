@@ -30,7 +30,7 @@ class LightsensorTest(unittest.TestCase):
         str = "different value: sum_forward %d vs %d" % ( vs.sum_forward, lf+rf)
         self.assertEqual(vs.sum_forward, lf+rf,str)
 
-    def test_get_exist(self):
+    def test_node_exist(self):
         nodes = rosnode.get_node_names()
         self.asserIn('/lightsensors',nodes,"node does not exist")
 
