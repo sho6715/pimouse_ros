@@ -17,18 +17,14 @@ class LightsensorTest(unittest.TestCase):
 
     def check_values(self,lf,ls,rs,rf):
         vs = self.values
-        str = "different value: left_forward %d vs %d" % ( vs.left_forward, lf)
-        self.assertEqual(vs.left_forward, lf, str)
-        str = "different value: left_side %d vs %d" % ( vs.left_side, ls)
-        self.assertEqual(vs.left_side, ls, str)
-        str = "different value: right_side %d vs %d" % ( vs.right_side, rs)
-        self.assertEqual(vs.right_side, rs, str)
-        str = "different value: right_forward %d vs %d" % ( vs.right_forward, rf)
-        self.assertEqual(vs.right_forward, rf, str)
-        str = "different value: sum_all %d vs %d" % ( vs.sum_all, lf+ls+rs+rf)
-        self.assertEqual(vs.sum_all, lf+ls+rs+rf,str)
-        str = "different value: sum_forward %d vs %d" % ( vs.sum_forward, lf+rf)
-        self.assertEqual(vs.sum_forward, lf+rf,str)
+        str = "diffrent value: left_forward vs: %s %s" % (vs.left_forward , lf)
+        #self.assertEqual(vs.left_forward,rf,"different vaule: left_forward")
+        self.assertEqual(vs.left_forward,lf,str)
+        self.assertEqual(vs.left_side,    ls,"different value:left_side")
+        self.assertEqual(vs.right_side,   rs,"different value:right_side")
+        self.assertEqual(vs.right_forward,rf,"different value:right_forward")
+        self.assertEqual(vs.sum_all,lf+ls+rs+rf,"different value: sum_all")
+        self.assertEqual(vs.sum_forward,lf+rf,"different value:sum_forward")
 
     def test_node_exist(self):
         nodes = rosnode.get_node_names()
