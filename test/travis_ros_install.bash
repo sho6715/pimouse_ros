@@ -1,8 +1,7 @@
 #!/bin/bash -xve
 
 #required packages
-#pip install --user catkin_pkg
-sudo apt-get install -qq catkin_pkg
+pip install catkin_pkg
 pip install --user empy
 pip install --user pyyaml
 pip install --user rospkg
