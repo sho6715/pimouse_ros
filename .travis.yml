@@ -43,5 +43,5 @@ script:
   # build
   - cd ~/catkin_ws
   - catkin_make
-  - bash -xve ./test/travis_prepare_dummy_files.bash
+  #  - bash -xve ./test/travis_prepare_dummy_files.bash
   - rostest pimouse_ros test.launch
