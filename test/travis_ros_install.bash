@@ -1,7 +1,7 @@
 #!/bin/bash -xve
 
 #required packages
-pip install --user catkin_pkg==0.4.0
+pip install --user catkin-pkg==0.4.23
 pip install --user empy
 pip install --user pyyaml
 pip install --user rospkg
