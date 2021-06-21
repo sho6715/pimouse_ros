@@ -76,7 +76,6 @@ class MotorTest(unittest.TestCase):
             data = f.readline()
             self.assertEqual(data,"-321 654 1500\n","value does not written to rtmotor0")
 
-
 if __name__ == '__main__':
     rospy.init_node('travis_test_motors')
     rostest.rosrun('pimouse_ros','travis_test_motors', MotorTest)
