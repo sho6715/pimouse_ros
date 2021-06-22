@@ -1,5 +1,6 @@
 sudo: required
 dist: bionic
+
 script:
   - bash -xve ./test/travis_ros_install.bash
   - source ~/catkin_ws/devel/setup.bash
