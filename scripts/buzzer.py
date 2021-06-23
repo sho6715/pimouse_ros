@@ -8,18 +8,20 @@ def write_freq(hz=0):
     bfile = "/dev/rtbuzzer0"
     try:
         with open(bfile,"w") as f:
-            f.write(str(hz)+"\n")
+            f.write(str(hz) + "\n")
     except IOError:
         rospy.logerr("can't write to " + bfile)
 
 def recv_buzzer(data):
     write_freq(data.data)
+    rospy.loginfo(type(data))
+    rospy.loginfo(data.data)
 
-def exec_music(goal):
+def exec_music(goal): #pass
     r = MusicResult()
     fb = MusicFeedback()
 
-    for i, f in enumerate(goal.freqs):
+    for i,f in enumerate(goal.freqs):
         fb.remaining_steps = len(goal.freqs) - i
         music.publish_feedback(fb)
 
@@ -37,7 +39,7 @@ def exec_music(goal):
 
 if __name__ == '__main__':
     rospy.init_node('buzzer')
-    rospy.Subscriber("buzzer", UInt16, recv_buzzer)
+    rospy.Subscriber("buzzer",UInt16,recv_buzzer)
     music = actionlib.SimpleActionServer('music',MusicAction, exec_music,False)
     music.start()
     rospy.on_shutdown(write_freq)
