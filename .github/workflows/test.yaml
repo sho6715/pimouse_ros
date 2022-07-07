@@ -1,0 +1,11 @@
+name: ROS test workflow
+
+on: [push]
+
+jobs:
+        test:
+                runs-on: ubuntu-18.04
+                steps:
+                        - name: echo command
+                          run: echo "Hello World"
+
