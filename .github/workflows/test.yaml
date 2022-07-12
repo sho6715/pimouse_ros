@@ -9,7 +9,7 @@ jobs:
                         - name: echo command
                           run: echo "Hello World"
 
-                          name: packages
+                        - name: packages
                           run: 
                                 pip install --user catkin_pkg
                                 pip install --user empy
