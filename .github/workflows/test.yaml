@@ -28,8 +28,8 @@ jobs:
 
                                 set +vx
                                 while ! sudo apt-get install -y curl ; do
-                                echo '***WAITING TO GET A LOCK FOR APT...***'
-                                sleep 1
+                                        echo '***WAITING TO GET A LOCK FOR APT...***'
+                                        sleep 1
                                 done
                                 set -vx
 
