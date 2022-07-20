@@ -25,7 +25,7 @@ jobs:
 
                                 echo "deb http://packages.ros.org/ros/ubuntu $UBUNTU_VER main" > /tmp/$$-deb
                                 sudo mv /tmp/$$-deb /etc/apt/sources.list.d/ros-latest.list
-                                echo "cat /etc/apt/sources.list.d/ros-latest.list"
+                                cat /etc/apt/sources.list.d/ros-latest.list
 
                                 set +vx
                                 while ! sudo apt-get install -y curl 
@@ -39,5 +39,5 @@ jobs:
                                 
                                 sudo apt-get update || echo ""
 
-                                sudo apt-get install -y ros-melodic-ros-base
+                                sudo apt-get install -y ros-${ROS_VER}-ros-base
 
