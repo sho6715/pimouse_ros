@@ -24,6 +24,7 @@ jobs:
                                 [ "$UBUNTU_VER" = "bionic" ] || exit 1
 
                                 sudo sh -c 'echo "deb http://packages.ros.org/ubuntu $UBUNTU_VER main" > /tmp/$$-deb'
+                                
                                 sudo cat /tmp/$$-deb
                                 #sudo mv /tmp/$$-deb /etc/apt/sources.list.d/ros-latest.list
 
