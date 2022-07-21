@@ -17,6 +17,7 @@ jobs:
                           run:
                                 UBUNTU_VER=$(lsb_release -sc)
                                 ROS_VER=melodic
+
                                 [ "$UBUNTU_VER" = "bionic" ] || exit 1
 
                                 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $UBUNTU_VER main" > /etc/apt/sources.list.d/ros-latest.list'
