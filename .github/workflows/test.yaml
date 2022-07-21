@@ -10,13 +10,6 @@ jobs:
                         - name: echo command
                           run: echo "Hello World"
 
-                        - name: packages
-                          run: 
-                                pip install --user catkin_pkg
-                                pip install --user empy
-                                pip install --user pyyaml
-                                pip install --user rospkg
-
                         - name: ros install
                           run:
                                 echo lsb_release -sc
