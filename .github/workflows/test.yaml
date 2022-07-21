@@ -24,9 +24,7 @@ jobs:
                                 [ "$UBUNTU_VER" = "bionic" ] || exit 1
 
                                 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $UBUNTU_VER main" > /etc/apt/sources.list.d/ros-latest.list'
-                                #sudo mv /tmp/$$-deb /etc/apt/sources.list.d/ros-latest.list
-                                #cat $(/etc/apt/sources.list.d/ros-latest.list)
-
+                                
                                 set +vx
                                 while ! sudo apt-get install -y curl 
                                 do
