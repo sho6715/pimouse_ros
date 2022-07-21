@@ -10,6 +10,13 @@ jobs:
                         - name: echo command
                           run: echo "Hello World"
                         
+                        - name: packages
+                          run: 
+                              pip install --user catkin_pkg
+                              pip install --user empy
+                              pip install --user pyyaml
+                              pip install --user rospkg
+                        
                         - name: ver check
                           run:
                                 echo "$(lsb_release -sc)"
@@ -35,4 +42,11 @@ jobs:
                                 sudo apt-get update || echo ""
 
                                 sudo apt-get install -y ros-${ROS_VER}-ros-base
+
+                                ls /etc/ros/rosdep/sources.list.d/20-default.list && sudo rm -f /etc/ros/rosdep/sources.list.d/20-default.list
+                                sudo apt install -y python-pip
+                                sudo -H pip install rosdep
+                                sudo rosdep init
+                                sudo rosdep update
+
 
