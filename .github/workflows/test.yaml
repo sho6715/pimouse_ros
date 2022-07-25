@@ -44,7 +44,7 @@ jobs:
                                 sudo apt-get install -y ros-${ROS_VER}-ros-base
                                                                 
                                 sudo apt install -y python-pip
-                                sudo apt pip install rosdep
+                                sudo apt install rosdep
                                 sudo rosdep init
                                 sudo rosdep update
 
