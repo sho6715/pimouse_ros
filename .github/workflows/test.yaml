@@ -54,6 +54,6 @@ jobs:
                                 sudo -H pip install rosdep
                                 
                                 sudo rosdep init
-                                sudo rosdep update
+                                rosdep update
 
 
