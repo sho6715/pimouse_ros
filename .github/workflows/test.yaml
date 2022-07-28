@@ -47,7 +47,7 @@ jobs:
                           run:
                                 sudo -H pip install rosdep
                                 
-                                #sudo rosdep init
-                                #sudo rosdep update
+                                rosdep init
+                                rosdep update
 
 
