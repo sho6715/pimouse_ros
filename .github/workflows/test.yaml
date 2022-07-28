@@ -45,6 +45,8 @@ jobs:
  
                         - name: install rosdep
                           run:
+                                ls /etc/ros/rosdep/sources.list.d/20-default.list && sudo rm -f /etc/ros/rosdep/sources.list.d/20-default.list
+
                                 sudo apt-get install -y python-pip
 
                                 sudo -H pip install rosdep
