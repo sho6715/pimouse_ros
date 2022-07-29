@@ -65,3 +65,21 @@ jobs:
                           run:
                                 grep -F "source /opt/ros/$ROS_VER/setup.bash" ~/.bashrc ||
                                 echo "souce /opt/ros/$ROS_VER/setup.bash" >> ~/.bashrc
+
+                                grep -F "ROS_MASTER_URI" ~/.bashrc ||
+                                echo "export ROS_MASTER_URI=http://localhost:11311" >> ~/.bashrc
+
+                                grep -F "ROS_HOSTNAME" ~/.bashrc ||
+                                echo "export ROS_HOSTNAME=localhost" >> ~/.bashrc
+
+                                sudo chown $USER:$USER $HOME/.ros/ -R
+
+                                ### instruction for user ###
+                                set +xv
+
+                                echo '***INSTRUCTION*****************'
+                                echo '* do the following command    *'
+                                echo '* $ source ~/.bashrc          *'
+                                echo '* after that, try             *'
+                                echo '* $ LANG=C roscore            *'
+                                echo '*******************************'
