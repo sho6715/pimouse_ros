@@ -74,7 +74,6 @@ jobs:
 
                                 sudo chown $USER:$USER $HOME/.ros/ -R
 
-                                ### instruction for user ###
                                 set +xv
 
                                 echo '***INSTRUCTION*****************'
