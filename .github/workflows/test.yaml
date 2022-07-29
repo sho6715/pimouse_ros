@@ -82,3 +82,17 @@ jobs:
                                 echo '* after that, try             *'
                                 echo '* $ LANG=C roscore            *'
                                 echo '*******************************'
+
+                        - name: catkin setup
+                          run:
+                                mkdir -p ~/catkin_ws/src
+
+                                cd ~/catkin_ws/src
+                                
+                                source /opt/ros/melodic/setup.bash
+
+                                catkin_init_workspace
+
+                                cd ~/catkin_ws
+
+                                catkin_make
