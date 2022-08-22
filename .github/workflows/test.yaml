@@ -107,4 +107,4 @@ jobs:
 
                                 bash -xve ./test/travis_prepare_dummy_files.bash
 
-                                rostest --text pimouse_ros test.launch
+                                rostest pimouse_ros test.launch
