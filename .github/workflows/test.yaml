@@ -97,7 +97,7 @@ jobs:
 
                                 catkin_make
 
-                        - name: buzzer test
+                        - name: setup bash
                           run:
                                 source ~/catkin_ws/devel/setup.bash
 
@@ -105,6 +105,8 @@ jobs:
 
                                 source ~/catkin_ws/devel/setup.bash
 
+                        - name : test
+                          run :
                                 bash -xve ./test/travis_prepare_dummy_files.bash
 
                                 rostest pimouse_ros test.launch
