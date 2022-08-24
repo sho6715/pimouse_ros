@@ -18,6 +18,8 @@ jobs:
                               pip install --user empy
                               pip install --user pyyaml
                               pip install --user rospkg
+
+                              pip install --upgrade pip
                         
                         - name: ver check
                           run:
