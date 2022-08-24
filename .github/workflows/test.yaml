@@ -103,6 +103,8 @@ jobs:
 
                                 source ~/catkin_ws/devel/setup.bash
 
+                        - name:
+                          run:
                                 bash -xve ./test/travis_package_make.bash
 
                                 source ~/catkin_ws/devel/setup.bash
