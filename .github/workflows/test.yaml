@@ -11,7 +11,9 @@ jobs:
                           run: echo "Hello World"
                         
                         - name: packages
-                          run: 
+                          run:
+                              python setup.py bdist_wheel
+
                               pip install --user wheel
                               pip install --user catkin_pkg
                               pip install --user empy
