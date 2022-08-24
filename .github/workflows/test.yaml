@@ -13,7 +13,6 @@ jobs:
                         
                         - name: packages
                           run:
-                              pip install --user wheel
                               pip install --user catkin_pkg
                               pip install --user empy
                               pip install --user pyyaml
