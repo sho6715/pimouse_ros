@@ -105,8 +105,8 @@ jobs:
 
                                 source ~/catkin_ws/devel/setup.bash
 
-                        - name : test
-                          run :
+                        - name: test
+                          run:
                                 bash -xve ./test/travis_prepare_dummy_files.bash
 
                                 rostest pimouse_ros test.launch
