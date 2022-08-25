@@ -100,10 +100,10 @@ jobs:
 
                                 catkin_make
 
+                        - name: setup bash 
+                          run:
                                 source ~/catkin_ws/devel/setup.bash
 
-                        - name: setup bash
-                          run:
                                 bash -xve ./test/travis_package_make.bash
 
                                 source ~/catkin_ws/devel/setup.bash
