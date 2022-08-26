@@ -98,7 +98,9 @@ jobs:
 
                                 ls -la
 
-                                cd ~/catkin_ws/src/pimouse_ros
+                                cd ~/catkin_ws/src/
+
+                                ls -la
 
                                 bash -xve ./test/travis_package_make.bash
 
