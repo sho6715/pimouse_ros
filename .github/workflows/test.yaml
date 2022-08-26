@@ -96,6 +96,10 @@ jobs:
 
                                 source ~/catkin_ws/devel/setup.bash
 
+                                ls -la
+
+                                cd ~/catkin_ws/src/pimouse_ros
+
                                 bash -xve ./test/travis_package_make.bash
 
                                 source ~/catkin_ws/devel/setup.bash
