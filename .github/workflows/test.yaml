@@ -98,11 +98,7 @@ jobs:
 
                                 ls -la
 
-                                cd ~/catkin_ws/src/
-
-                                ls -la
-
-                                cd  ~/
+                                cd ~/catkin_ws
 
                                 ls -la
 
