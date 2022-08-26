@@ -46,8 +46,6 @@ jobs:
 
                                 sudo apt-get install -y ros-${ROS_VER}-ros-base
  
-                        - name: install rosdep
-                          run:
                                 ls /etc/ros/rosdep/sources.list.d/20-default.list && sudo rm -f /etc/ros/rosdep/sources.list.d/20-default.list
 
                                 sudo apt-get install -y python-pip
@@ -64,8 +62,6 @@ jobs:
 
                                 sudo apt-get install -y build-essential
 
-                        - name: setup bash
-                          run:
                                 grep -F "source /opt/ros/$ROS_VER/setup.bash" ~/.bashrc ||
                                 echo "souce /opt/ros/$ROS_VER/setup.bash" >> ~/.bashrc
 
@@ -86,8 +82,6 @@ jobs:
                                 echo '* $ LANG=C roscore            *'
                                 echo '*******************************'
 
-                        - name: catkin setup
-                          run:
                                 mkdir -p ~/catkin_ws/src
 
                                 cd ~/catkin_ws/src
@@ -100,8 +94,6 @@ jobs:
 
                                 catkin_make
 
-                        - name: setup bash 
-                          run:
                                 source ~/catkin_ws/devel/setup.bash
 
                                 bash -xve ./test/travis_package_make.bash
