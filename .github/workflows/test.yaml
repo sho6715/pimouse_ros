@@ -99,7 +99,7 @@ jobs:
 
                                 bash -xve ./test/travis_package_make.bash
 
-                                cd ~/catkin_ws
+                                ls -la
 
                                 source ~/catkin_ws/devel/setup.bash
 
