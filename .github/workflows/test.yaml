@@ -93,6 +93,8 @@ jobs:
                                 cd ~/catkin_ws
 
                                 catkin_make
+
+                                ls -la
                         - name: setup bash
                           run:
                                 source ~/catkin_ws/devel/setup.bash
@@ -104,5 +106,7 @@ jobs:
                                 source ~/catkin_ws/devel/setup.bash
 
                                 bash -xve ./test/travis_prepare_dummy_files.bash
+
+                                chmod 774 /home/runner/.ros
 
                                 rostest pimouse_ros test.launch
