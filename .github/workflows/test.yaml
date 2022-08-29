@@ -95,6 +95,10 @@ jobs:
                                 catkin_make
 
                                 ls -la
+
+                                cd ~
+
+                                ls -la
                         - name: setup bash
                           run:
                                 source ~/catkin_ws/devel/setup.bash
