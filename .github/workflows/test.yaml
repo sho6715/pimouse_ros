@@ -109,8 +109,8 @@ jobs:
 
                                 source ~/catkin_ws/devel/setup.bash
 
+                                sudo chmod 777 ~/runner
+                                
                                 bash -xve ./test/travis_prepare_dummy_files.bash
-
-                                roscore
 
                                 rostest pimouse_ros test.launch
