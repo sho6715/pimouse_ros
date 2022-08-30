@@ -107,9 +107,9 @@ jobs:
 
                                 ls -la
 
-                                source ~/catkin_ws/devel/setup.bash
-
                                 sudo chmod 777 ~/.ros
+
+                                source ~/catkin_ws/devel/setup.bash
                                 
                                 bash -xve ./test/travis_prepare_dummy_files.bash
 
