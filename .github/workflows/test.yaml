@@ -111,6 +111,6 @@ jobs:
 
                                 bash -xve ./test/travis_prepare_dummy_files.bash
 
-                                sudo chmod 777 ~/.ros
+                                roscore
 
                                 rostest pimouse_ros test.launch
