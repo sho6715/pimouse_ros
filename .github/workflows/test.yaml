@@ -107,7 +107,7 @@ jobs:
 
                                 ls -la
 
-                                sudo chmod 777 ~/.ros
+                                sudo chmod -R 777 ~/.ros
 
                                 source ~/catkin_ws/devel/setup.bash
                                 
