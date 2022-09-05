@@ -71,7 +71,7 @@ jobs:
                                 grep -F "ROS_HOSTNAME" ~/.bashrc ||
                                 echo "export ROS_HOSTNAME=localhost" >> ~/.bashrc
 
-                                sudo chown $USER:$USER $HOME/.ros/ -R
+                                sudo chown -R $USER:$USER $HOME/.ros/
 
                                 set +xv
 
@@ -106,8 +106,6 @@ jobs:
                                 bash -xve ./test/travis_package_make.bash
 
                                 ls -la
-
-                                sudo chmod -R 777 ~/.ros
 
                                 source ~/catkin_ws/devel/setup.bash
                                 
