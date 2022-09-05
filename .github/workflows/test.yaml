@@ -54,7 +54,9 @@ jobs:
 
                                 sudo -H pip install rosdep
                                 
-                                sudo rosdep init                                  
+                                sudo rosdep init                      
+                        
+                                rosdep update            
                                 
                                 sudo apt-get install -y python-rosinstall
 
@@ -79,8 +81,6 @@ jobs:
                                 echo '* after that, try             *'
                                 echo '* $ LANG=C roscore            *'
                                 echo '*******************************'
-
-                                rosdep update
                                 
                                 mkdir -p ~/catkin_ws/src
 
