@@ -99,7 +99,7 @@ jobs:
                                 ls -la
                         - name: setup bash
                           run:
-                                sudo chown -R $USER:$USER $HOME/.ros/
+                                sudo chown -R -c $USER:$USER $HOME/.ros/
                                 
                                 source ~/catkin_ws/devel/setup.bash
 
