@@ -71,8 +71,6 @@ jobs:
                                 grep -F "ROS_HOSTNAME" ~/.bashrc ||
                                 echo "export ROS_HOSTNAME=localhost" >> ~/.bashrc
 
-                                sudo chown -R $USER:$USER $HOME/.ros/
-
                                 set +xv
 
                                 echo '***INSTRUCTION*****************'
@@ -101,6 +99,8 @@ jobs:
                                 ls -la
                         - name: setup bash
                           run:
+                                sudo chown -R $USER:$USER $HOME/.ros/
+                                
                                 source ~/catkin_ws/devel/setup.bash
 
                                 bash -xve ./test/travis_package_make.bash
@@ -114,3 +114,4 @@ jobs:
                                 echo "rostest"
 
                                 rostest pimouse_ros test.launch
+
