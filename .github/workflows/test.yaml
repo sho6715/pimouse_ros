@@ -124,5 +124,7 @@ jobs:
 
                                 cd ../
 
+                                ls -la
+
                                 rostest pimouse_ros test.launch
 
