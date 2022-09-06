@@ -101,6 +101,10 @@ jobs:
                                 cd ~
 
                                 ls -la
+
+                                cd .ros/
+
+                                ls -la
                         - name: setup bash
                           run:                                
                                 source ~/catkin_ws/devel/setup.bash
