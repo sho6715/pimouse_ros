@@ -105,12 +105,11 @@ jobs:
                                 cd catkin_ws
 
                                 ls -la
-
-                                cd ..
-
-                                sudo chown -R -c $USER:$USER $HOME/catkin_ws 
+ 
                         - name: setup bash
                           run:                                
+                                sudo chown -R -c $USER:$USER $HOME/catkin_ws
+                          
                                 source ~/catkin_ws/devel/setup.bash
 
                                 bash -xve ./test/travis_package_make.bash
