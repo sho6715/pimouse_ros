@@ -73,6 +73,8 @@ jobs:
 
                                 sudo chown -R -c $USER:$USER $HOME/.ros/
 
+                                sudo chmod 777 $HOME/.ros/
+
                                 set +xv
 
                                 echo '***INSTRUCTION*****************'
