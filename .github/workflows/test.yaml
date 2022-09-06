@@ -105,6 +105,10 @@ jobs:
                                 cd catkin_ws
 
                                 ls -la
+
+                                cd ..
+
+                                sudo chown -R -c $USER:$USER $HOME/catkin_ws 
                         - name: setup bash
                           run:                                
                                 source ~/catkin_ws/devel/setup.bash
