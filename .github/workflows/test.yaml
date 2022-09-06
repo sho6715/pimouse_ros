@@ -102,7 +102,7 @@ jobs:
 
                                 ls -la
 
-                                cd .ros/
+                                cd catkin_ws
 
                                 ls -la
                         - name: setup bash
