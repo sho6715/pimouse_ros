@@ -108,7 +108,7 @@ jobs:
  
                         - name: setup bash
                           run:                                
-                                sudo chown -R -c $USER:$USER $HOME/catkin_ws
+                                sudo chown -R -c $USER:$USER $HOME/work
                           
                                 source ~/catkin_ws/devel/setup.bash
 
