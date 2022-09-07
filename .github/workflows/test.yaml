@@ -96,15 +96,7 @@ jobs:
 
                                 catkin_make
 
-                                ls -la
-
-                                cd ~
-
-                                ls -la
-
-                                cd catkin_ws
-
-                                ls -la
+                                ln -s ${GITHUB_WORKSPACE} ${CATKIN_WS}/src/
  
                         - name: setup bash
                           run:                                
