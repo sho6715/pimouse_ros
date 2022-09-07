@@ -96,7 +96,7 @@ jobs:
 
                                 catkin_make
 
-                                ln -s ${GITHUB_WORKSPACE} ${CATKIN_WS}/src/
+                                ln -s ${GITHUB_WORKSPACE} ~/catkin_ws/src
  
                         - name: setup bash
                           run:                                
