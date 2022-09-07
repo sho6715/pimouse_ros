@@ -105,10 +105,6 @@ jobs:
  
                         - name: setup bash
                           run:                                
-                                sudo chown -R -c $USER:$USER $HOME/work
-
-                                sudo chown -R -c $USER:$USER $HOME/.ros
-                          
                                 source ~/catkin_ws/devel/setup.bash
 
                                 bash -xve ./test/travis_package_make.bash
