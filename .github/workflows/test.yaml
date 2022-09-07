@@ -122,7 +122,7 @@ jobs:
 
                                 echo "rostest"
 
-                                cd ../../../
+                                pwd
 
                                 ls -la
 
