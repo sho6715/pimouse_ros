@@ -1,4 +1,0 @@
-<launch>
-    <node pkg="pimouse_ros" name="publisher" type="test_pub.py" required="true" output="screen"/>
-    <node pkg="pimouse_ros" name="subscriber" type="test_sub.py" required="true" output="screen"/> 
-</launch>
