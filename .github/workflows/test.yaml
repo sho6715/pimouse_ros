@@ -23,7 +23,8 @@ jobs:
                      mkdir -p ${CATKIN_WS}/src && cd ${CATKIN_WS} && catkin_make
                      ln -s ${GITHUB_WORKSPACE} ${CATKIN_WS}/src/
                      ls -la
-                     cd ~/catkin_ws/src
+                     pwd
+                     cd ~/runner/catkin_ws/src
                      ls -la
 
                 - name: Run tests
