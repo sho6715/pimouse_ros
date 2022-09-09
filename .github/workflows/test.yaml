@@ -31,7 +31,7 @@ jobs:
                   run: |
 
                      source ${CATKIN_WS}/devel/setup.bash
-                     bash -xve ./test/travis_package_make.bash
+                     catkin_make
                      source ${CATKIN_WS}/devel/setup.bash
                      bash -xve ./test/travis_prepare_dummy_files.bash
                      rostest pimouse_ros test.launch 
