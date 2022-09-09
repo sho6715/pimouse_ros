@@ -22,9 +22,13 @@ jobs:
                      source /opt/ros/melodic/setup.bash
                      mkdir -p ${CATKIN_WS}/src && cd ${CATKIN_WS} && catkin_make
                      ln -s ${GITHUB_WORKSPACE} ${CATKIN_WS}/src/
+                     ls -la
+                     cd ~/catkin_ws/src
+                     ls -la
 
                 - name: Run tests
                   run: |
+
                      source ${CATKIN_WS}/devel/setup.bash
                      bash -xve ./test/travis_package_make.bash
                      source ${CATKIN_WS}/devel/setup.bash
