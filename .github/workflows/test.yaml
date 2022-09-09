@@ -32,10 +32,8 @@ jobs:
                      source ${CATKIN_WS}/devel/setup.bash
                      pwd
                      ls -la
-                     cd ../
                      pwd
                      catkin_make
-                     cd pimouse_ros
                      source ${CATKIN_WS}/devel/setup.bash
                      bash -xve ./test/travis_prepare_dummy_files.bash
                      rostest pimouse_ros test.launch 
