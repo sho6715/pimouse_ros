@@ -30,9 +30,12 @@ jobs:
                 - name: Run tests
                   run: |
                      source ${CATKIN_WS}/devel/setup.bash
+                     pwd
                      ls -la
                      cd ../
+                     pwd
                      catkin_make
+                     cd src
                      source ${CATKIN_WS}/devel/setup.bash
                      bash -xve ./test/travis_prepare_dummy_files.bash
                      rostest pimouse_ros test.launch 
