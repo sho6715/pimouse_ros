@@ -29,8 +29,9 @@ jobs:
 
                 - name: Run tests
                   run: |
-
                      source ${CATKIN_WS}/devel/setup.bash
+                     ls -la
+                     cd ../
                      catkin_make
                      source ${CATKIN_WS}/devel/setup.bash
                      bash -xve ./test/travis_prepare_dummy_files.bash
