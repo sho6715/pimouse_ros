@@ -24,7 +24,7 @@ jobs:
                      ln -s ${GITHUB_WORKSPACE} ${CATKIN_WS}/src/
                      ls -la
                      pwd
-                     cd ~/runner/catkin_ws/src
+                     cd ~/work/catkin_ws/src
                      ls -la
 
                 - name: Run tests
