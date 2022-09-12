@@ -30,7 +30,7 @@ jobs:
                 - name: Run tests
                   run: |
                      pwd
-                     cd ${CATKIN_WS}
+                     cd ${CATKIN_WS}/src/pimouse_ros
                      pwd
                      catkin_make
                      source ${CATKIN_WS}/devel/setup.bash
