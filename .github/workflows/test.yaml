@@ -30,7 +30,7 @@ jobs:
                 - name: Run tests
                   run: |
                      pwd
-                     cd ~/catkin_make
+                     cd ~/work/catkin_make
                      pwd
                      catkin_make
                      source ${CATKIN_WS}/devel/setup.bash
