@@ -10,7 +10,9 @@ jobs:
 
                 steps:
                 - uses: actions/checkout@v2
-
+                  with:
+                      python-version: '2.7'
+                      architecture: 'x64'
 
                 - name: Setup ROS
                   uses: ros-tooling/setup-ros@v0.2
