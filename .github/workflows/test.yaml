@@ -16,6 +16,9 @@ jobs:
                   uses: ros-tooling/setup-ros@v0.2
                   with:
                       required-ros-distributions: melodic
+                
+                - name: Setup Python
+                  uses: actions/setup-python@v2
 
                 - name: Init workspace
                   run: |
