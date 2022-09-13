@@ -29,6 +29,7 @@ jobs:
                 - name: Run tests
                   run: |
                      python -V
+                     rsync -av ./ ~/catkin_ws/src/pimouse_ros/
                      cd ${CATKIN_WS} && catkin_make
                      source ${CATKIN_WS}/devel/setup.bash
                      bash -xve ./test/travis_prepare_dummy_files.bash
