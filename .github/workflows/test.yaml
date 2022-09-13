@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
         test:
-                runs-on: ubuntu-18.04
+                runs-on: ubuntu-20.04
                 env:
                     CATKIN_WS: /home/runner/work/catkin_ws
 
@@ -16,12 +16,6 @@ jobs:
                   with:
                       required-ros-distributions: melodic
                 
-                - name: Setup Python
-                  uses: actions/setup-python@v2
-                  with:
-                      python-version: '2.7'
-                      architecture: 'x64'
-
                 - name: Init workspace
                   run: |
                      source /opt/ros/melodic/setup.bash
