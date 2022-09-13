@@ -21,6 +21,9 @@ jobs:
                 
                 - name: Setup Python
                   uses: actions/setup-python@v2
+                  with:
+                      python-version: '2.7'
+                      architecture: 'x64'
 
                 - name: Init workspace
                   run: |
