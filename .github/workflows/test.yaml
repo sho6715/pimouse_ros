@@ -14,7 +14,7 @@ jobs:
                 - name: Setup ROS
                   uses: ros-tooling/setup-ros@v0.2
                   with:
-                      required-ros-distributions: melodic
+                      required-ros-distributions: noetic
                 
                 - name: Init workspace
                   run: |
