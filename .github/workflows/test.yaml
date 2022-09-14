@@ -18,6 +18,8 @@ jobs:
                 
                 - name: Init workspace
                   run: |
+                     sudo apt-get install -y python-rosinstall
+                     sudo apt-get install -y build-essential
                      source /opt/ros/melodic/setup.bash
                      mkdir -p ${CATKIN_WS}/src && cd ${CATKIN_WS} && catkin_make
                      ln -s ${GITHUB_WORKSPACE} ${CATKIN_WS}/src/
