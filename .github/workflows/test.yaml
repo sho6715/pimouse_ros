@@ -21,6 +21,7 @@ jobs:
                      ls /etc/ros/rosdep/sources.list.d/20-default.list && sudo rm -f /etc/ros/rosdep/sources.list.d/20-default.list
 
                      sudo -H pip install rosdep
+                     sudo rosdep init
                      rosdep update
                      source /opt/ros/melodic/setup.bash
                      mkdir -p ${CATKIN_WS}/src && cd ${CATKIN_WS} && catkin_make
