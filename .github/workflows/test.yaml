@@ -11,6 +11,15 @@ jobs:
                 steps:
                 - uses: actions/checkout@v2
 
+                - name: packages
+                  run:
+                      pip install --user catkin_pkg
+                      pip install --user empy
+                      pip install --user pyyaml
+                      pip install --user rospkg
+
+                      pip install --upgrade pip
+
                 - name: Setup ROS
                   uses: ros-tooling/setup-ros@v0.2
                   with:
