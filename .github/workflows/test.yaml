@@ -32,6 +32,19 @@ jobs:
                      sudo -H pip install rosdep
                      sudo rosdep init
                      rosdep update
+                     sudo apt-get install -y python-rosinstall
+
+                     sudo apt-get install -y build-essential
+
+                     grep -F "source /opt/ros/$ROS_VER/setup.bash" ~/.bashrc ||
+                     echo "souce /opt/ros/$ROS_VER/setup.bash" >> ~/.bashrc
+
+                     grep -F "ROS_MASTER_URI" ~/.bashrc ||
+                     echo "export ROS_MASTER_URI=http://localhost:11311" >> ~/.bashrc
+
+                     grep -F "ROS_HOSTNAME" ~/.bashrc ||
+                     echo "export ROS_HOSTNAME=localhost" >> ~/.bashrc
+
                      source /opt/ros/melodic/setup.bash
                      mkdir -p ${CATKIN_WS}/src && cd ${CATKIN_WS} && catkin_make
                      ln -s ${GITHUB_WORKSPACE} ${CATKIN_WS}/src/
