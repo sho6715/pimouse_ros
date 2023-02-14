@@ -11,11 +11,6 @@ jobs:
                 steps:
                 - uses: actions/checkout@v2
 
-                - uses: update ubuntu
-                  runs: |
-                  apt-get update
-                  apt-get upgrade
-
                 - uses: setup python
                   runs: |
                   apt install build-essential 
