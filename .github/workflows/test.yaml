@@ -13,12 +13,12 @@ jobs:
 
                 - uses: update ubuntu
                   runs: |
-                  sudo apt-get update
-                  sudo apt-get upgrade
+                  apt-get update
+                  apt-get upgrade
 
                 - uses: setup python
                   runs: |
-                  sudo apt install build-essential 
+                  apt install build-essential 
                   echo "python -v" >> python -v
 
 
