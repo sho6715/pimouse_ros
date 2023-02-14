@@ -26,4 +26,8 @@ jobs:
                     cd ${CATKIN_WS}
                     catkin_make
 
+                - name: setup bash
+                  run: |
+                    source ~/catkin_ws/devel/setup.bash
+
 
