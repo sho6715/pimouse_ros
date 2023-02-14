@@ -11,12 +11,17 @@ jobs:
                 steps:
                 - uses: actions/checkout@v2
 
-                - uses: setup python
-                  runs: |
-                  apt install build-essential 
-                  echo "python -v" >> python -v
+                - name: Setup Python
+                  uses: actions/setup-python@v2
+                  with:
+                    python-version: '3.8'
+                    architecture: 'x64'
+                - name: Get Python version
+                  run: python -V
 
 
                 - name: Setup_ROS
-                  
+                  uses: ros-tooling/setup-ros@v0.2
+                  with:
+                    required-ros-distributions: noetic
 
