@@ -19,11 +19,11 @@ jobs:
 
                 - name: catkin_make
                   run: |
-                  mkdir -p ${CATKIN_WS}/src
-                  cd ${CATKIN_WS}/src
-                  source /opt/ros/noetic/setup.bash
-                  catkin_init_workspace
-                  cd ${CATKIN_WS}
-                  catkin_make
+                    mkdir -p ${CATKIN_WS}/src
+                    cd ${CATKIN_WS}/src
+                    source /opt/ros/noetic/setup.bash
+                    catkin_init_workspace
+                    cd ${CATKIN_WS}
+                    catkin_make
 
 
