@@ -28,6 +28,7 @@ jobs:
 
                 - name: setup bash
                   run: |
+                    ls /etc/ros/rosdep/sources.list.d/20-default.list && sudo rm -f /etc/ros/rosdep/sources.list.d/20-default.list
                     sudo apt install -y python3-pip
                     sudo apt-get install python3-rosdep
                     sudo rosdep init 
