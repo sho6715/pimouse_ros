@@ -32,7 +32,7 @@ jobs:
                     sudo apt install -y python3-pip
                     sudo apt-get install python3-rosdep
                     sudo rosdep init 
-                    sudo rosdep update
+                    rosdep update
 
                     grep -F "source /opt/ros/$ROS_VER/setup.bash" ~/.bashrc ||
                     echo "source /opt/ros/$ROS_VER/setup.bash" >> ~/.bashrc
@@ -44,6 +44,7 @@ jobs:
                     echo "export ROS_HOSTNAME=localhost" >> ~/.bashrc
 
                     ls -la $HOME
+                    ls -la ~/
 
                 - name : chown
                   run: |
