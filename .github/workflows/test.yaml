@@ -28,6 +28,11 @@ jobs:
 
                 - name: setup bash
                   run: |
+                    sudo apt install -y python-pip
+                    sudo -H pip install rosdep
+                    sudo rosdep init 
+                    sudo rosdep update
+
                     grep -F "source /opt/ros/$ROS_VER/setup.bash" ~/.bashrc ||
                     echo "source /opt/ros/$ROS_VER/setup.bash" >> ~/.bashrc
 
@@ -38,6 +43,10 @@ jobs:
                     echo "export ROS_HOSTNAME=localhost" >> ~/.bashrc
 
                     ls -la $HOME
+
+                - name : chown
+                  run: |
+                    sudo chown $USER:$USER $HOME/.ros/ -R
                 - name : setup.bash
                   run: |
                     source ~/catkin_ws/devel/setup.bash
