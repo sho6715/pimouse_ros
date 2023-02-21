@@ -36,7 +36,9 @@ jobs:
 
                     grep -F "ROS_HOSTNAME" ~/.bashrc ||
                     echo "export ROS_HOSTNAME=localhost" >> ~/.bashrc
-                    
-                    rsync -av ./ ~/catkin_ws/src/pimouse_ros
+
+                    sudo chown $USER:$USER $HOME/work/.ros/ -R
+
+                    source ~/runner/work/catkin_ws/devel/setup.bash
 
 
