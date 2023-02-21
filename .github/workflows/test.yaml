@@ -36,8 +36,6 @@ jobs:
 
                     grep -F "ROS_HOSTNAME" ~/.bashrc ||
                     echo "export ROS_HOSTNAME=localhost" >> ~/.bashrc
-
-                    sudo chown $USER:$USER $HOME/.ros/ -R
                     
                     source ~/catkin_ws/devel/setup.bash
 
