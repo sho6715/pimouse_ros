@@ -6,7 +6,7 @@ jobs:
         test:
                 runs-on: ubuntu-20.04
                 env:
-                    CATKIN_WS: /home/runner/work/catkin_ws
+                    CATKIN_WS: /home/runner/catkin_ws
 
                 steps:
                 - name: Setup_ROS
@@ -38,9 +38,8 @@ jobs:
                     echo "export ROS_HOSTNAME=localhost" >> ~/.bashrc
 
                     ls -la $HOME
-                    ls -la $HOME/work
                 - name : setup.bash
                   run: |
-                    source ~/runner/work/catkin_ws/devel/setup.bash
+                    source ~/catkin_ws/devel/setup.bash
 
 
