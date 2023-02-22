@@ -55,11 +55,14 @@ jobs:
 
                 - name: package make
                   run: |
-                    bash -xve ./test/travis_package_make.bash
+                    rsync -av ~/work/pimouse_ros/ ~/catkin_ws/src/pimouse_ros/
+                    cd ~/catkin_ws
+                    catkin_make
                     source ~/catkin_ws/devel/setup.bash
 
                 - name: dummy file
                   run: |
+                    cd ~/catkin_ws/src/pimouse_ros
                     bash -xve ./test/travis_prepare_dummy_files.bash
                     rostest pimouse_ros test.launch
 
