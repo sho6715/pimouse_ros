@@ -57,6 +57,9 @@ jobs:
                   run: |
                     cd ${CATKIN_WS}
                     ls -la 
+                    cd src
+                    ls -la 
+                    cd ../
                     rsync -av ~/work/pimouse_ros ~/catkin_ws/src/
                     cd ${CATKIN_WS}
                     ls -la 
