@@ -55,8 +55,11 @@ jobs:
 
                 - name: package make
                   run: |
+                    cd ${CATKIN_WS}
+                    ls -la 
                     rsync -av ~/work/pimouse_ros ~/catkin_ws/src/
                     cd ${CATKIN_WS}
+                    ls -la 
                     catkin_make
                     source ~/catkin_ws/devel/setup.bash
 
