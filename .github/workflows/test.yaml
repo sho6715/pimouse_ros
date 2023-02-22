@@ -60,8 +60,10 @@ jobs:
                     cd ${CATKIN_WS}
                     ls -la 
                     cd src
+                    ls -la
+                    cd pimouse_ros 
                     ls -la 
-                    cd ../
+                    cd ../../
                     catkin_make
                     source ~/catkin_ws/devel/setup.bash
 
