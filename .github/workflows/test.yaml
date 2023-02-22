@@ -64,6 +64,7 @@ jobs:
                     cd pimouse_ros 
                     ls -la 
                     cd ../../
+                    pwd
                     catkin_make
                     source ~/catkin_ws/devel/setup.bash
 
