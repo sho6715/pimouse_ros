@@ -68,15 +68,9 @@ jobs:
                 - name: dummy file
                   run: |
                     source ~/catkin_ws/devel/setup.bash
-                    rosdep update
                     cd ~/catkin_ws/src/pimouse_ros
                     bash -xve ${CATKIN_WS}/src/pimouse_ros/test/travis_prepare_dummy_files.bash
-                    cd ~/catkin_ws/src/pimouse_ros/launch
-                    chmod +x test.launch
-                    cd ../
-                    cd test
-                    chmod +x travis_test*
 
-                    sudo rostest pimouse_ros test.launch
+                    rostest pimouse_ros test.launch
 
 
