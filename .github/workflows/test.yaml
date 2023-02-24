@@ -55,20 +55,8 @@ jobs:
 
                 - name: package make
                   run: |
-                    cd ~/work
-                    ls -la
-                    cd pimouse_ros
-                    ls -la
-                    cd ${CATKIN_WS}
                     rsync -av ~/work/pimouse_ros/pimouse_ros ~/catkin_ws/src/
                     cd ${CATKIN_WS}
-                    ls -la 
-                    cd src
-                    ls -la
-                    cd pimouse_ros 
-                    ls -la 
-                    cd ../../
-                    pwd
                     source /opt/ros/noetic/setup.bash
                     catkin_make
                     source ~/catkin_ws/devel/setup.bash
@@ -76,7 +64,7 @@ jobs:
                 - name: dummy file
                   run: |
                     cd ~/catkin_ws/src/pimouse_ros
-                    bash -xve ./test/travis_prepare_dummy_files.bash
+                    bash -xve ${CATKIN_WS}/src/pimouse_ros/test/travis_prepare_dummy_files.bash
                     rostest pimouse_ros test.launch
 
 
