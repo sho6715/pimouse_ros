@@ -68,6 +68,7 @@ jobs:
                 - name: dummy file
                   run: |
                     source ~/catkin_ws/devel/setup.bash
+                    rosdep update
                     cd ~/catkin_ws/src/pimouse_ros
                     bash -xve ${CATKIN_WS}/src/pimouse_ros/test/travis_prepare_dummy_files.bash
                     rostest pimouse_ros test.launch
