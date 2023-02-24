@@ -64,6 +64,10 @@ jobs:
                 - name: dummy file
                   run: |
                     cd ~/catkin_ws/src/pimouse_ros
+                    ls -la 
+                    cd test
+                    ls -la 
+                    cd ~/catkin_ws/src/pimouse_ros
                     bash -xve ${CATKIN_WS}/src/pimouse_ros/test/travis_prepare_dummy_files.bash
                     rostest pimouse_ros test.launch
 
