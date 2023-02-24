@@ -71,6 +71,12 @@ jobs:
                     rosdep update
                     cd ~/catkin_ws/src/pimouse_ros
                     bash -xve ${CATKIN_WS}/src/pimouse_ros/test/travis_prepare_dummy_files.bash
+                    cd ~/catkin_ws/src/pimouse_ros/launch
+                    chmod +x test.launch
+                    cd ../
+                    cd test
+                    chmod +x travix_test*
+
                     rostest pimouse_ros test.launch
 
 
