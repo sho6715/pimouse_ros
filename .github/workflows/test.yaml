@@ -9,6 +9,8 @@ jobs:
                     CATKIN_WS: /home/runner/catkin_ws
 
                 steps:
+                - uses: actions/checkout@v2
+                
                 - name: Setup_ROS
                   uses: ros-tooling/setup-ros@v0.2
                   with:
@@ -55,6 +57,8 @@ jobs:
 
                 - name: package make
                   run: |
+                    cd ~/
+                    git clone https://github.com/sho6715/pimouse_ros.git
                     rsync -av ~/work/pimouse_ros/pimouse_ros ~/catkin_ws/src/
                     cd ${CATKIN_WS}
                     source /opt/ros/noetic/setup.bash
