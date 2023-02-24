@@ -70,6 +70,7 @@ jobs:
                     source ~/catkin_ws/devel/setup.bash
                     cd ~/catkin_ws/src/pimouse_ros
                     bash -xve ${CATKIN_WS}/src/pimouse_ros/test/travis_prepare_dummy_files.bash
+                    chmod +x .ros
 
                     rostest pimouse_ros test.launch
 
