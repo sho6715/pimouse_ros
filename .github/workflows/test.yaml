@@ -75,7 +75,7 @@ jobs:
                     chmod +x test.launch
                     cd ../
                     cd test
-                    chmod +x travix_test*
+                    chmod +x travis_test*
 
                     rostest pimouse_ros test.launch
 
