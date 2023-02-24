@@ -60,7 +60,7 @@ jobs:
                     cd pimouse_ros
                     ls -la
                     cd ${CATKIN_WS}
-                    rsync -av ~/work/pimouse_ros ~/catkin_ws/src/
+                    rsync -av ~/work/pimouse_ros/pimouse_ros ~/catkin_ws/src/
                     cd ${CATKIN_WS}
                     ls -la 
                     cd src
