@@ -6,7 +6,7 @@ jobs:
         test:
                 runs-on: ubuntu-20.04
                 env:
-                    CATKIN_WS: /home/runner/catkin_ws
+                    CATKIN_WS: /home/runner/work/catkin_ws
 
                 steps:
                 - uses: actions/checkout@v2
@@ -53,21 +53,21 @@ jobs:
                     sudo chown $USER:$USER $HOME/.ros/ -R
                 - name : setup.bash
                   run: |
-                    source ~/catkin_ws/devel/setup.bash
+                    source ~/work/catkin_ws/devel/setup.bash
 
                 - name: package make
                   run: |
                     cd ~/
                     git clone https://github.com/sho6715/pimouse_ros.git
-                    rsync -av ~/work/pimouse_ros/pimouse_ros ~/catkin_ws/src/
+                    rsync -av ~/work/pimouse_ros/pimouse_ros ~/work/catkin_ws/src/
                     cd ${CATKIN_WS}
                     source /opt/ros/noetic/setup.bash
                     catkin_make
-                    source ~/catkin_ws/devel/setup.bash
+                    source ~/work/catkin_ws/devel/setup.bash
 
                 - name: dummy file
                   run: |
-                    source ~/catkin_ws/devel/setup.bash
+                    source ~/work/catkin_ws/devel/setup.bash
                     cd ~/catkin_ws/src/pimouse_ros
                     bash -xve ${CATKIN_WS}/src/pimouse_ros/test/travis_prepare_dummy_files.bash
                     ls -la ~/
