@@ -72,7 +72,6 @@ jobs:
                     bash -xve ${CATKIN_WS}/src/pimouse_ros/test/travis_prepare_dummy_files.bash
                     ls -la ~/
 
-                    catkin build pimouse_ros --no-deps --catkin-make-args tests
 
                     rostest pimouse_ros test.launch
 
