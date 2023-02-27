@@ -71,7 +71,7 @@ jobs:
                     cd ~/work/catkin_ws/src/pimouse_ros
                     bash -xve ${CATKIN_WS}/src/pimouse_ros/test/travis_prepare_dummy_files.bash
                     ls -la ~/
-
+                    catkin_make
                     rostest pimouse_ros test.launch
 
 
