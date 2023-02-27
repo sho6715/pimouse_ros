@@ -72,7 +72,7 @@ jobs:
                     bash -xve ${CATKIN_WS}/src/pimouse_ros/test/travis_prepare_dummy_files.bash
                     ls -la ~/
 
-                    sudo chown $USER:$USER $HOME/.ros/ -R
+                    sudo chown $USER:$USER $HOME/.ros/ -R +W
                     rostest pimouse_ros test.launch
 
 
