@@ -71,6 +71,9 @@ jobs:
                     cd ~/work/catkin_ws/src/pimouse_ros
                     bash -xve ${CATKIN_WS}/src/pimouse_ros/test/travis_prepare_dummy_files.bash
                     ls -la ~/
+                    cd ../../
+                    ls -la
+                    cd ~/
                     sudo rosdep fix-permissions
                     sudo chmod 777 $HOME/.ros/ 
                     ls -la ~/
