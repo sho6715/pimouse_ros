@@ -73,8 +73,6 @@ jobs:
                     ls -la ~/
                     cd ~/../../
                     ls -la
-                    cd root
-                    ls -la
                     cd ~/
                     sudo rosdep fix-permissions
                     sudo chmod 777 $HOME/.ros/ 
