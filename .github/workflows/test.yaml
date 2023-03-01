@@ -74,7 +74,7 @@ jobs:
                     ls -la
                     sudo chown $USER:$USER $HOME/.ros/ -R
                     sudo rosdep fix-permissions
-                    sudo chmod 666 $HOME/.ros/ 
+                    sudo chmod 775 $HOME/.ros/ 
                     ls -la ~/
                     rostest pimouse_ros test.launch
 
