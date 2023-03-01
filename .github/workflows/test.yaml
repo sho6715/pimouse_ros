@@ -70,15 +70,6 @@ jobs:
                     source ~/work/catkin_ws/devel/setup.bash
                     cd ~/work/catkin_ws/src/pimouse_ros
                     bash -xve ${CATKIN_WS}/src/pimouse_ros/test/travis_prepare_dummy_files.bash
-                    ls -la ~/
-                    ls -la /home/
-                    sudo chown $USER:$USER /home/runner
-                    sudo chown $USER:$USER $HOME/.ros/ -R
-                    sudo rosdep fix-permissions
-                    ls -la /home/
-                    sudo chmod -R 775 $HOME/.ros/ 
-                    cd ~/.ros
-                    ls -la
 
                     source /opt/ros/noetic/setup.bash
                     cd ${CATKIN_WS}
