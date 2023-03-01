@@ -78,5 +78,6 @@ jobs:
                     cd ~/.ros
                     ls -la
                     rostest pimouse_ros test.launch
+                    ls -la ~/.ros
 
 
