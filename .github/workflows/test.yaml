@@ -74,6 +74,7 @@ jobs:
                     ls -la /home/
                     sudo chown $USER:$USER /home/runner
                     sudo chown $USER:$USER $HOME/.ros/ -R
+                    sudo chmod -R 775 /home/runner 
                     sudo rosdep fix-permissions
                     ls -la /home/
                     sudo chmod -R 775 $HOME/.ros/ 
