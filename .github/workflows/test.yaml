@@ -71,6 +71,9 @@ jobs:
                     cd ~/work/catkin_ws/src/pimouse_ros
                     bash -xve ${CATKIN_WS}/src/pimouse_ros/test/travis_prepare_dummy_files.bash
 
+                    cd ${CATKIN_WS}/src/
+                    ls -la 
+
                     source /opt/ros/noetic/setup.bash
                     cd ${CATKIN_WS}
                     catkin_make
