@@ -73,6 +73,9 @@ jobs:
 
                     cd ${CATKIN_WS}/src/
                     ls -la 
+                    cd pimouse_ros
+                    ls -la
+                    
 
                     source /opt/ros/noetic/setup.bash
                     cd ${CATKIN_WS}
