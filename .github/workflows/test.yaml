@@ -70,14 +70,13 @@ jobs:
                     source ~/work/catkin_ws/devel/setup.bash
                     cd ~/work/catkin_ws/src/pimouse_ros
                     bash -xve ${CATKIN_WS}/src/pimouse_ros/test/travis_prepare_dummy_files.bash
-                    cd ~/.ros
-                    ls -la
+                    ls -la /~
+                    ls -la /runnner
                     sudo chown $USER:$USER $HOME/.ros/ -R
                     sudo rosdep fix-permissions
                     sudo chmod -R 775 $HOME/.ros/ 
                     cd ~/.ros
                     ls -la
                     rostest pimouse_ros test.launch
-                    ls -la ~/.ros
 
 
