@@ -80,7 +80,7 @@ jobs:
                     source /opt/ros/noetic/setup.bash
                     cd ${CATKIN_WS}
                     catkin_make
-                    cd pimouse_ros
+                    cd ${CATKIN_WS}/pimouse_ros
                     rostest pimouse_ros test.launch
 
 
