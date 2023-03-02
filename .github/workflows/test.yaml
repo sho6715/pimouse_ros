@@ -75,11 +75,12 @@ jobs:
                     ls -la 
                     cd pimouse_ros
                     ls -la
-                    
+
 
                     source /opt/ros/noetic/setup.bash
                     cd ${CATKIN_WS}
                     catkin_make
+                    cd pimouse_ros
                     rostest pimouse_ros test.launch
 
 
