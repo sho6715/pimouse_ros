@@ -83,6 +83,6 @@ jobs:
                     catkin_make
                     ls -la 
                     cd ${CATKIN_WS}/src/pimouse_ros
-                    rostest pimouse_ros test.launch
+                    roslaunch pimouse_ros test.launch
 
 
