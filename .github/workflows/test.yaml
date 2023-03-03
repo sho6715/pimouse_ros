@@ -76,6 +76,8 @@ jobs:
                     cd pimouse_ros
                     ls -la
 
+                    sudo chown $USER:$USER ${CATKIN_WS}/src -R
+
                     cd ${CATKIN_WS}
                     ls -la 
                     catkin_make
