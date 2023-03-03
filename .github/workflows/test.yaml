@@ -75,15 +75,14 @@ jobs:
                     ls -la 
                     cd pimouse_ros
                     ls -la
-
-                    sudo chown $USER:$USER ${CATKIN_WS}/src -R
-
+                    sudo apt update
+                    sudo apt upgrade
 
                     cd ${CATKIN_WS}
                     ls -la 
                     catkin_make
                     ls -la 
                     cd ${CATKIN_WS}/src/pimouse_ros
-                    sudo rostest pimouse_ros test.launch
+                    rostest pimouse_ros test.launch
 
 
