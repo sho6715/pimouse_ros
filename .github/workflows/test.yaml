@@ -54,12 +54,6 @@ jobs:
         run: |
           . /opt/ros/${{ matrix.ros_distribution }}/setup.sh
 
-          grep -F "source /opt/ros/noetic/setup.bash" ~/.bashrc ||
-          echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
-          grep -F "ROS_MASTER_URI" ~/.bashrc ||
-          echo "export ROS_MASTER_URI=http://localhost:11311" >> ~/.bashrc
-          grep -F "ROS_HOSTNAME" ~/.bashrc ||
-          echo "export ROS_HOSTNAME=localhost" >> ~/.bashrc
           . /opt/ros/noetic/setup.bash
 
           cd ~/catkin_ws
