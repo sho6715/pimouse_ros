@@ -32,8 +32,8 @@ jobs:
                   run: |
                     ls /etc/ros/rosdep/sources.list.d/20-default.list && sudo rm -f /etc/ros/rosdep/sources.list.d/20-default.list
                     sudo apt install -y python3-pip
-                    apt-get install -y python3-catkin-tools python3-osrf-pycommon python3-vcstool
-                    apt0get update
+                    sudo apt-get install -y python3-catkin-tools python3-osrf-pycommon python3-vcstool
+                    sudo apt-get update
                     sudo apt-get install python3-rosdep
                     sudo rosdep init 
                     rosdep update --include-eol-distros
