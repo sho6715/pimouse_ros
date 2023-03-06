@@ -50,7 +50,6 @@ jobs:
           mkdir -p ~/catkin_ws/src
           rsync -av --exclude='.git/' ./ ~/catkin_ws/src/pimouse_ros/
           cd ~/catkin_ws/src
-          vcs import < pimouse_ros/.ci.repos
       - name: Run test
         run: |
           . /opt/ros/${{ matrix.ros_distribution }}/setup.sh
