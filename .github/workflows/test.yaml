@@ -52,7 +52,7 @@ jobs:
           cd ~/catkin_ws/src
       - name: Run test
         run: |
-          source opt/ros/fuerte/setup.bash
+          source opt/ros/noetic/setup.bash
           cd ~/catkin_ws
           rosdep install -r -y -i --from-paths .
           catkin init
