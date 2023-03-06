@@ -81,6 +81,7 @@ jobs:
                     whoami
 
                     cd ${CATKIN_WS}
+                    catkin run_tests pimouse_ros
                     rostest pimouse_ros test.launch
 
 
