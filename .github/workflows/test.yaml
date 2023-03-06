@@ -1,89 +1,63 @@
 name: ROS test workflow
 
-on: [push]
+on:
+  push:[push]
 
 jobs:
-        test:
-                runs-on: ubuntu-20.04
-                env:
-                    CATKIN_WS: /home/runner/work/catkin_ws
+  industrial_ci:
+    strategy:
+      matrix:
+        env:
+          - { ROS_DISTRO: noetic, ROS_REPO: main}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: "ros-industrial/industrial_ci@master"
+        env: ${{ matrix.env }}
 
-                steps:
-                - uses: actions/checkout@v2
+  catkin_test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ros_distribution:
+          - noetic
 
-                - name: Setup_ROS
-                  uses: ros-tooling/setup-ros@v0.2
-                  with:
-                    required-ros-distributions: noetic
+        # Define the Docker image(s) associated with each ROS distribution.
+        # The include syntax allows additional variables to be defined, like
+        # docker_image in this case. See documentation:
+        # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#example-including-configurations-in-a-matrix-build
+        #
+        # Platforms are defined in REP 3, and REP 2000:
+        # https://ros.org/reps/rep-0003.html
+        # https://ros.org/reps/rep-2000.html
+        include:
+          - docker_image: ros:noetic-ros-base-focal
+            ros_distribution: noetic
+            ros_version: 1
 
-                - name: Get Python version
-                  run: python -V
+    container:
+      image: ${{ matrix.docker_image }}
+    steps:
+      - uses: actions/checkout@v3
 
-                - name: catkin_make
-                  run: |
-                    mkdir -p ${CATKIN_WS}/src
-                    cd ${CATKIN_WS}/src
-                    source /opt/ros/noetic/setup.bash
-                    catkin_init_workspace
-                    cd ${CATKIN_WS}
-                    catkin_make
-
-                - name: setup bash
-                  run: |
-                    ls /etc/ros/rosdep/sources.list.d/20-default.list && sudo rm -f /etc/ros/rosdep/sources.list.d/20-default.list
-
-                    sudo apt-get install python3-rosdep
-
-                    sudo apt-get install -y python3-catkin-tools python3-osrf-pycommon python3-vcstool
-                    sudo apt-get update
-                    sudo rosdep init 
-                    rosdep update --include-eol-distros
-
-                    rosdep install -r -y -i --from-paths .
-
-                    grep -F "source /opt/ros/$ROS_VER/setup.bash" ~/.bashrc ||
-                    echo "source /opt/ros/$ROS_VER/setup.bash" >> ~/.bashrc
-
-                    grep -F "ROS_MASTER_URI" ~/.bashrc ||
-                    echo "export ROS_MASTER_URI=http://localhost:11311" >> ~/.bashrc
-
-                    grep -F "ROS_HOSTNAME" ~/.bashrc ||
-                    echo "export ROS_HOSTNAME=localhost" >> ~/.bashrc
-
-                    ls -la $HOME
-                    ls -la ~/
-
-                - name : chown
-                  run: |
-                    sudo chown $USER:$USER $HOME/.ros/ -R
-                - name : setup.bash
-                  run: |
-                    source ~/work/catkin_ws/devel/setup.bash
-
-                - name: package make
-                  run: |
-                    cd ~/
-                    git clone https://github.com/sho6715/pimouse_ros.git
-                    rsync -av ~/work/pimouse_ros/pimouse_ros ~/work/catkin_ws/src/
-                    cd ${CATKIN_WS}
-                    source /opt/ros/noetic/setup.bash
-                    catkin_make
-                    source ~/work/catkin_ws/devel/setup.bash
-
-                - name: dummy file
-                  run: |
-                    source ~/work/catkin_ws/devel/setup.bash
-                    cd ~/work/catkin_ws/src/pimouse_ros
-                    bash -xve ${CATKIN_WS}/src/pimouse_ros/test/travis_prepare_dummy_files.bash
-
-                    cd ${CATKIN_WS}/src/
-                    ls -la 
-                    cd pimouse_ros
-                    ls -la
-
-                    whoami
-
-                    cd ${CATKIN_WS}
-                    rostest pimouse_ros test.launch
-
-
+      - name: Post setup (Noetic)
+        run: |
+          apt-get update
+          apt-get install -y python3-catkin-tools python3-osrf-pycommon python3-vcstool
+      - name: Prepare test
+        run: |
+          apt-get install -y rsync git
+          rosdep update --include-eol-distros
+          mkdir -p ~/catkin_ws/src
+          rsync -av --exclude='.git/' ./ ~/catkin_ws/src/pimouse_ros/
+          cd ~/catkin_ws/src
+          vcs import < pimouse_ros/.ci.repos
+      - name: Run test
+        run: |
+          . /opt/ros/${{ matrix.ros_distribution }}/setup.sh
+          cd ~/catkin_ws
+          rosdep install -r -y -i --from-paths .
+          catkin init
+          catkin build
+          catkin run_tests --no-deps pimouse_ros
+          ls -d ~/catkin_ws/build/pimouse_ros* | xargs -I{} catkin_test_results --verbose {} || exit 1
