@@ -75,8 +75,8 @@ jobs:
                     ls -la 
                     cd pimouse_ros
                     ls -la
-                    sudo apt update
-                    sudo apt upgrade
+
+                    whoami
 
                     cd ${CATKIN_WS}
                     ls -la 
