@@ -1,7 +1,6 @@
 name: ROS test workflow
 
-on:
-  push:[push]
+on: [push]
 
 jobs:
   industrial_ci:
