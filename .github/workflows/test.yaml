@@ -58,7 +58,8 @@ jobs:
           catkin init
           catkin build
           catkin run_tests --no-deps pimouse_ros
-
+          ls -la ${CATKIN_WS}/src/pimouse_ros
+          ls -la ${CATKIN_WS}/src/pimouse_ros/test
           bash -xve ${CATKIN_WS}/src/pimouse_ros/test/travis_prepare_dummy_files.bash
           rostest pimouse_ros test.launch
           ls -d ~/catkin_ws/build/pimouse_ros* | xargs -I{} catkin_test_results --verbose {} || exit 1
