@@ -36,6 +36,8 @@ jobs:
                     sudo rosdep init 
                     rosdep update --include-eol-distros
 
+                    rosdep install -r -y -i --from-paths .
+
                     grep -F "source /opt/ros/$ROS_VER/setup.bash" ~/.bashrc ||
                     echo "source /opt/ros/$ROS_VER/setup.bash" >> ~/.bashrc
 
@@ -79,6 +81,6 @@ jobs:
                     whoami
 
                     cd ${CATKIN_WS}
-                    rostest src/pimouse_ros/launch/test.launch
+                    rostest pimouse_ros test.launch
 
 
