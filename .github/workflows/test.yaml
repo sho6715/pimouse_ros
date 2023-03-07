@@ -54,13 +54,13 @@ jobs:
         run: |
           . /opt/ros/${{ matrix.ros_distribution }}/setup.sh
 
-          . /opt/ros/noetic/setup.bash
-
           cd ~/catkin_ws
           rosdep install -r -y -i --from-paths .
           catkin init
           catkin build
           catkin run_tests --no-deps pimouse_ros
+
+          . /catkin_ws/devel/setup.bash
           ls -la ~/catkin_ws
           ls -la ~/catkin_ws/src/pimouse_ros/test
           bash -xve ~/catkin_ws/src/pimouse_ros/test/travis_prepare_dummy_files.bash
