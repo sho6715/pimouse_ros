@@ -60,7 +60,9 @@ jobs:
           catkin build
           catkin run_tests --no-deps pimouse_ros
 
-          . /catkin_ws/devel/setup.bash
+          ls -la ~/catkin_ws/devel
+
+          . ~/catkin_ws/devel/setup.bash
           ls -la ~/catkin_ws
           ls -la ~/catkin_ws/src/pimouse_ros/test
           bash -xve ~/catkin_ws/src/pimouse_ros/test/travis_prepare_dummy_files.bash
