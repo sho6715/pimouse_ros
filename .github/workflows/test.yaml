@@ -64,8 +64,8 @@ jobs:
                     sudo apt-get install python3-rosdep
 
                     sudo apt-get update
-                    sudo rosdep init 
-                    sudo rosdep update
+                    rosdep init 
+                    rosdep update
 
                     grep -F "source /opt/ros/$ROS_VER/setup.bash" ~/.bashrc ||
                     echo "source /opt/ros/$ROS_VER/setup.bash" >> ~/.bashrc
