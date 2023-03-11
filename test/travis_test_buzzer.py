@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #encoding: utf8
-import rospy, unittest, rostest,actionlib
+import rospy, unittest, rostest, actionlib
 import rosnode
 import time
 from std_msgs.msg import UInt16
@@ -9,14 +9,14 @@ from pimouse_ros.msg import MusicAction, MusicResult, MusicFeedback, MusicGoal
 class BuzzerTest(unittest.TestCase):
     def setUp(self):
         self.client = actionlib.SimpleActionClient("music",MusicAction)
-        self.device_values = []
+        self.device_values=[]
 
     def test_node_exist(self):
         nodes = rosnode.get_node_names()
         self.assertIn('/buzzer',nodes,"node does not exist")
 
     def test_put_value(self):
-        pub = rospy.Publisher('/buzzer', UInt16)
+        pub = rospy.Publisher('/buzzer',UInt16)
         for i in range(10):
             pub.publish(1234)
             time.sleep(0.1)
