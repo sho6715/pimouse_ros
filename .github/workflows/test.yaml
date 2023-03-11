@@ -22,6 +22,11 @@ jobs:
                 - name: catkin_make
                   run: |
 
+                    pip install --user catkin_pkg
+                    pip install --user empy
+                    pip install --user pyyaml
+                    pip install --user rospkg
+                    
                     mkdir -p ${CATKIN_WS}/src
                     cd ${CATKIN_WS}/src
                     source /opt/ros/noetic/setup.bash
