@@ -79,9 +79,6 @@ jobs:
                     ls -la $HOME
                     ls -la ~/
 
-                - name : chown
-                  run: |
-                    
                 - name : setup.bash
                   run: |
                     source ~/work/catkin_ws/devel/setup.bash
