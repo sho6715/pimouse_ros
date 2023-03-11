@@ -30,6 +30,9 @@ jobs:
                     echo "deb http://packages.ros.org/ros/ubuntu $UBUNTU_VER main" > /tmp/$$-deb
                     sudo mv /tmp/$$-deb /etc/apt/sources.list.d/ros-latest.list
 
+                - name: ROS setup 2
+                  run: |
+
                     set +vx
                     while ! sudo apt-get install -y curl ; do
                       echo '***WAITING TO GET A LOCK FOR APT...***'
