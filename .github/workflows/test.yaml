@@ -64,8 +64,8 @@ jobs:
                     sudo apt-get install python3-rosdep
 
                     sudo apt-get update
-                    rosdep init 
-                    rosdep update
+                    sudo rosdep init 
+                    sudo rosdep update
 
                     grep -F "source /opt/ros/$ROS_VER/setup.bash" ~/.bashrc ||
                     echo "source /opt/ros/$ROS_VER/setup.bash" >> ~/.bashrc
@@ -81,7 +81,7 @@ jobs:
 
                 - name : chown
                   run: |
-                    sudo chown $USER:$USER $HOME/.ros/ -R
+                    
                 - name : setup.bash
                   run: |
                     source ~/work/catkin_ws/devel/setup.bash
