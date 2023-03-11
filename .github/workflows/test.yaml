@@ -25,7 +25,7 @@ jobs:
 
                     UBUNTU_VER=$(lsb_release -sc)
                     ROS_VER=noetic
-                    [ "$UBUNTU_VER" = "bionic" ] || exit 1
+                    [ "$UBUNTU_VER" = "focal" ] || exit 1
 
                     echo "deb http://packages.ros.org/ros/ubuntu $UBUNTU_VER main" > /tmp/$$-deb
                     sudo mv /tmp/$$-deb /etc/apt/sources.list.d/ros-latest.list
